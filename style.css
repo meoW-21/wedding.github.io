@@ -1,0 +1,462 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --boho-terra: #c87a5a;
+  --boho-sand: #e8d5c4;
+  --boho-olive: #7e8a6f;
+  --boho-cream: #f9f5f0;
+  --boho-charcoal: #3e3a36;
+  --boho-gold: #b99b6b;
+  --blur-bg: rgba(0, 0, 0, 0.2);
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --shadow-soft:
+    0 12px 28px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --border-radius-card: 24px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--boho-cream);
+  color: var(--boho-charcoal);
+  line-height: 1.5;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--boho-charcoal);
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+}
+
+h2:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--boho-terra);
+  opacity: 0.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+section {
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("https://images.pexels.com/photos/16919823/pexels-photo-16919823/free-photo-of-wedding-couple-in-boho-style-in-field.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+    no-repeat center center/cover;
+  position: relative;
+  color: white;
+  padding: 0 16px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background-color: rgba(40, 30, 20, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  background: rgba(255, 245, 235, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 48px 32px;
+  border-radius: 80px 20px 80px 20px;
+  border: 1px solid rgba(255, 245, 235, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-bottom: 16px;
+  color: #f2e6d9;
+}
+
+.hero-names {
+  font-family: var(--font-serif);
+  font-size: clamp(3.2rem, 12vw, 5.6rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-date {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+  font-family: var(--font-sans);
+}
+
+.hero-location {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+.hero-divider {
+  width: 80px;
+  height: 1px;
+  background: var(--boho-cream);
+  margin: 24px auto;
+  opacity: 0.6;
+}
+
+/* Блок 2 */
+.place-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+}
+
+.place-images {
+  flex: 2;
+  min-width: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.place-img {
+  border-radius: 60px 16px 60px 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 4/3;
+  background-color: #d9cdbf;
+  transition: transform 0.3s ease;
+}
+
+.place-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.place-info {
+  flex: 1;
+  min-width: 240px;
+  background: white;
+  padding: 32px 28px;
+  text-align: center;
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(184, 152, 120, 0.15);
+}
+
+.place-title {
+  font-size: 2rem;
+  font-family: var(--font-serif);
+  margin-bottom: 16px;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--boho-terra);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 60px;
+  text-decoration: none;
+  font-weight: 400;
+  margin-top: 20px;
+  transition: 0.2s;
+  border: 1px solid transparent;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 12px rgba(200, 122, 90, 0.2);
+}
+
+.map-link i {
+  font-size: 1.3rem;
+}
+
+.map-link:hover {
+  background: #b0684a;
+  transform: translateY(-2px);
+}
+
+/* Блок 3 */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.timeline-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
+  padding: 24px 28px;
+  border-radius: 40px 12px 40px 12px;
+  border-left: 6px solid var(--boho-terra);
+  box-shadow: var(--shadow-soft);
+}
+
+.timeline-icon {
+  font-size: 2.4rem;
+  color: var(--boho-terra);
+  min-width: 60px;
+  text-align: center;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-time {
+  font-weight: 500;
+  font-size: 1.4rem;
+  font-family: var(--font-serif);
+  color: var(--boho-olive);
+  margin-bottom: 6px;
+}
+
+.timeline-desc {
+  font-size: 1.1rem;
+}
+
+.illustration-note {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  color: var(--boho-charcoal);
+  font-style: italic;
+}
+
+/* Блок 4 */
+.dress-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.dress-card {
+  flex: 1 1 260px;
+  background: white;
+  padding: 32px 24px;
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-soft);
+  border-bottom: 4px solid var(--boho-gold);
+  transition: all 0.2s;
+}
+
+.dress-icon {
+  font-size: 2.4rem;
+  color: var(--boho-terra);
+  margin-bottom: 20px;
+}
+
+.dress-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.swim-highlight {
+  background: #e3d9cd;
+  margin-top: 20px;
+  padding: 18px 22px;
+  border-radius: 30px 8px 30px 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.swim-highlight i {
+  font-size: 2rem;
+  color: #3a6b7e;
+}
+
+/* Блок 5 */
+.rsvp-section {
+  background: linear-gradient(145deg, #f3ede5 0%, var(--boho-cream) 100%);
+}
+
+.form-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 44px 36px;
+  border-radius: 48px 16px 48px 16px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(200, 122, 90, 0.15);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--boho-charcoal);
+  font-size: 1rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #d6cdc0;
+  border-radius: 40px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  background: white;
+  transition: border 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--boho-terra);
+  box-shadow: 0 0 0 3px rgba(200, 122, 90, 0.2);
+}
+
+.radio-group {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.radio-group input[type="radio"] {
+  width: auto;
+  margin-right: 4px;
+  accent-color: var(--boho-terra);
+}
+
+.btn-submit {
+  background: var(--boho-terra);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.2rem;
+  border-radius: 60px;
+  width: 100%;
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 8px 18px rgba(200, 122, 90, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 16px;
+}
+
+.btn-submit:hover {
+  background: #b0684a;
+  transform: scale(0.98);
+}
+
+.form-message {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+  min-height: 30px;
+}
+
+.footer {
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.9rem;
+  color: #7e7a76;
+  border-top: 1px solid #e0d6cc;
+}
+
+.small-note {
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+
+/* Адаптивность */
+@media (max-width: 640px) {
+  section {
+    padding: 56px 0;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  .hero-content {
+    padding: 32px 16px;
+    border-radius: 40px 8px 40px 8px;
+  }
+  .hero-names {
+    font-size: 2.8rem;
+  }
+  .place-images {
+    grid-template-columns: 1fr;
+  }
+  .timeline-item {
+    padding: 20px;
+  }
+  .form-card {
+    padding: 28px 18px;
+  }
+  .radio-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
