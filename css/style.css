@@ -64,7 +64,7 @@ body {
   font-size: 6rem;
   color: #ffffff;
   text-align: center;
-  margin-top: 100%;
+  margin-top: 80%;
 }
 .and {
   font-family: "Monsieur La Doulaise";
@@ -79,7 +79,7 @@ body {
   font-size: 10rem;
   color: #ffffff;
   text-align: center;
-  margin-top: 10%;
+  margin: 5% auto;
 }
 .main__video {
   position: absolute;
